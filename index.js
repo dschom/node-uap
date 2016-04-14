@@ -1,3 +1,5 @@
+require('array.prototype.find').shim();
+
 var path = require('path'),
     fs = require('fs'),
     yaml = require('yamlparser'),
