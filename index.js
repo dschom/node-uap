@@ -1,17 +1,9 @@
-require('array.prototype.find').shim();
-
-var path = require('path'),
-    fs = require('fs'),
+var fs = require('fs'),
     yaml = require('yamlparser'),
-    regexes_base_path = 'node_modules/uap-core/regexes.yaml',
-    uap_regexes_path = [
-        path.join(__dirname, regexes_base_path),
-        path.join(__dirname, '../..', regexes_base_path)
-    ].find(fs.existsSync),
-    refImpl = require('uap-ref-impl')(readYAML(uap_regexes_path));
+    refImpl = require('uap-ref-impl')(readYAML(require.resolve('uap-core/regexes.yaml')));
 
-function readYAML(file) {
-    var data = fs.readFileSync(file, 'utf8');
+function readYAML(fileName) {
+    var data = fs.readFileSync(fileName, 'utf8');
     return yaml.eval(data);
 }
 
