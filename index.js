@@ -1,11 +1,9 @@
-var path = require('path'),
-    fs = require('fs'),
+var fs = require('fs'),
     yaml = require('yamlparser'),
-    refImpl = require('uap-ref-impl')(readYAML('node_modules/uap-core/regexes.yaml'));
+    refImpl = require('uap-ref-impl')(readYAML(require.resolve('uap-core/regexes.yaml')));
 
 function readYAML(fileName) {
-    var file = path.join(__dirname, fileName);
-    var data = fs.readFileSync(file, 'utf8');
+    var data = fs.readFileSync(fileName, 'utf8');
     return yaml.eval(data);
 }
 
