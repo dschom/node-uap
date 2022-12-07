@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/fedot/node-uap",
   "dependencies": {
-    "uap-core": "https://github.com/ua-parser/uap-core#22d122028f009ef3c086a24e4354b903ec0941bd",
+    "uap-core": "https://github.com/ua-parser/uap-core#2cd82f7da82b37605fa3a43038db18365e5da9d3",
     "uap-ref-impl": "0.2.0",
     "yamlparser": "0.0.2"
   }
